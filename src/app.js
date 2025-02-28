@@ -1,12 +1,7 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import dotenv from "dotenv";
-dotenv.config();
 
-//routes import
-
-import userRouter from './routes/user.routes.js';
 
 const app=express();
 
@@ -20,10 +15,13 @@ app.use(express.urlencoded({extended:true,limit:"16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser());
 
+//routes import
 
+import userRouter from './routes/user.routes.js';
 
 // routes declaration
 
 //app.use("/users",userRouter) but better is
-app.use("/users",userRouter);
+app.use("/api/v1/users",userRouter);
+
 export{app};

@@ -6,3 +6,4 @@ class apiResponse{
         this.suzzess=statusCode<400 
     }
 }
+export{apiResponse}
