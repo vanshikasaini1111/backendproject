@@ -18,6 +18,10 @@ router.route("/register").post(
     ]),
     registerUser);
 
+    router.route("/login").post(loginUser);
+    // using middleware
+    router.route("/logout").post(verifyJWT,logOutUser);
+
 export default router;
 
 
