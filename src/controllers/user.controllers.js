@@ -158,7 +158,7 @@ const logOutUser=asyncHandler(async(req,res)=>{
     req.user._id,//middleware returned user
     {
       $set:{
-        refreshToken:undefined
+        refreshToken:1  //unset field by passing 1
       }
     },
     {
